@@ -17,7 +17,7 @@ Including another URLconf
 # from django.contrib import admin
 from django.conf.urls import include, url
 from django.contrib import admin
-from tweets.views import Index
+from tweets.views import Index,Profile
 import tweets
 
 # urlpatterns = [
@@ -29,5 +29,6 @@ import tweets
 urlpatterns = [
 #    url(r'^admin/', admin.site.urls),
     url(r'^$', Index.as_view()),
+    url(r'^user/(\w+)/$', Profile.as_view()),
     url(r'^admin/', include(admin.site.urls)),
 ]
